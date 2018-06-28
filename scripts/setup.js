@@ -5,7 +5,19 @@ const Expopulo = artifacts.require('./Expopulo.sol')
 
 module.exports = async function (callback) {
     this.token = await Expopulo.new(50000, 1000)
-    // const supply = await this.token.totalSupply()
-    console.log(this.token.address)
-    console.log(this.token.abi)
+    const contractJSON = {
+        'address': this.token.address,
+        'abi': this.token.abi
+    }
+    fs.writeFileSync(
+        './src/util/generated/expopulo.json',
+        JSON.stringify(contractJSON),
+        (err) => {
+            if(err){
+                console.log(err)
+                return
+            }
+        }
+    )
+
 }
