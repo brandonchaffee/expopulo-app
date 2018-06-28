@@ -15,3 +15,10 @@ selenium-debug.log
 *.ntvs*
 *.njsproj
 *.sln
+
+#Truffle Specific
+build
+
+#Setup generated files
+src/util/generated/*
+!src/util/generated/.gitkeep
