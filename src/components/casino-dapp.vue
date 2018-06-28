@@ -1,6 +1,5 @@
 <template>
   <div>
-<hello-world/>
  <hello-metamask/>
  <casino-component/>
 </div>
@@ -8,7 +7,6 @@
 <script>
 import HelloMetamask from '@/components/hello-metamask'
 import CasinoComponent from '@/components/casino-component'
-import HelloWorld from '@/components/HelloWorld'
 
 export default {
   name: 'casino-dapp',
@@ -18,8 +16,7 @@ export default {
   },
   components: {
     'hello-metamask': HelloMetamask,
-    'casino-component': CasinoComponent,
-    'hello-world': HelloWorld
+    'casino-component': CasinoComponent
   }
 }
 </script>
