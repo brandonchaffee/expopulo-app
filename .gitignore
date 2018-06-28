@@ -17,7 +17,7 @@ selenium-debug.log
 *.sln
 
 #Truffle Specific
-build
+build/contracts
 
 #Setup generated files
 src/util/generated/*
