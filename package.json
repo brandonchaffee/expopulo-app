@@ -13,10 +13,12 @@
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
     "lint:fix": "eslint --fix --ext .js,.vue src test/unit test/e2e/specs",
     "build": "node build/build.js",
-    "setup": "scripts/initialize.sh"
+    "setup": "scripts/initialize.sh",
+    "metaGanache": "scripts/metaGanache.sh"
   },
   "dependencies": {
     "ganache-cli": "^6.1.4",
+    "truffle": "^4.1.13",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
