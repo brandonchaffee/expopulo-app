@@ -6,7 +6,7 @@ let pollWeb3 = function (state) {
   web3 = new Web3(web3.currentProvider)
 
   setInterval(() => {
-    if (web3 && store.state.web3.web3Instance) {
+    if (web3 && store.state.web3.instance) {
       if (web3.eth.coinbase !== store.state.web3.coinbase) {
         let newCoinbase = web3.eth.coinbase
         web3.eth.getBalance(web3.eth.coinbase, function (err, newBalance) {

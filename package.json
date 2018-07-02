@@ -12,6 +12,8 @@
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
     "lint:fix": "eslint --fix --ext .js,.vue src test/unit test/e2e/specs",
+    "lint:gen": "eslint .",
+    "lint:gen:fix": "eslint . --fix",
     "build": "node build/build.js",
     "setup": "scripts/initialize.sh",
     "metaGanache": "scripts/metaGanache.sh"

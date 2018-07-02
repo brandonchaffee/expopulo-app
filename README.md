@@ -31,3 +31,8 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+
+# TODO
+1. clean up web3 getter and polling
+2. Pull contract from npm package
