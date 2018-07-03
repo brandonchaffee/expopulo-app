@@ -1,4 +1,5 @@
 let state = {
+  sidebar: 0,
   web3: {
     isInjected: false,
     instance: null,

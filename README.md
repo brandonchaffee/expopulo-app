@@ -36,3 +36,4 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 # TODO
 1. clean up web3 getter and polling
 2. Pull contract from npm package
+3. Organize function vs =>
