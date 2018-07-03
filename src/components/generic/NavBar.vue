@@ -63,4 +63,10 @@ img {
 img:hover {
     opacity: 0.95;
 }
+#balance {
+  padding: 5px 25px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.15em;
+}
 </style>

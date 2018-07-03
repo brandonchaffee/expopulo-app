@@ -28,7 +28,7 @@ export default {
   registerExternals (state, payload) {
     state.externals = externalsJSON.accounts
   },
-  setSidebar (state, {payload}) {
+  setSidebar (state, payload) {
     state.sidebar = payload
   }
 }

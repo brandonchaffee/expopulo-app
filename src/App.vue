@@ -6,7 +6,14 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  beforeCreate () {
+    this.$store.dispatch('registerWeb3')
+  },
+  mounted () {
+    this.$store.dispatch('getContractInstance')
+    this.$store.dispatch('getExternals')
+  }
 }
 </script>
 

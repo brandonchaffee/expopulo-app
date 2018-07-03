@@ -6,7 +6,7 @@
             @click="setSidebar(index)"
             v-bind:key="item.id"
         >
-            {{item.name}} {{ getVal  }}
+            {{item.name}}
         </li>
     </div>
 </template>
@@ -18,18 +18,12 @@ export default {
   name: 'SideBar',
   data () {
     return {
-
       items: [
         {name: 'Projects'},
         {name: 'Tasks'},
         {name: 'Contributions'},
         {name: 'Organizations'}
       ]
-    }
-  },
-  computed: {
-    getVal () {
-      return this.$store.state.sidebar
     }
   },
   methods: mapActions([

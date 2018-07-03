@@ -23,5 +23,5 @@ export default {
   getExternals ({commit}, payload) {
     commit('registerExternals', payload)
   },
-  setSidebar: ({ commit }, payload) => commit('setSidebar', {payload})
+  setSidebar: ({ commit }, payload) => commit('setSidebar', payload)
 }
