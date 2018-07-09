@@ -16,9 +16,10 @@ selenium-debug.log
 *.njsproj
 *.sln
 
-#Truffle Specific
-build/contracts
 
 #Setup generated files
+contracts/*
+build/contracts/*
 src/util/generated/*
-!src/util/generated/.gitkeep
+
+!**/.gitkeep

@@ -3,9 +3,8 @@
 set_and_deploy() {
     #Compile contracts for access to build/ABI
     echo "Compiling Expopulo Contract"
-    cd ./node_modules/expopulo/
-    truffle compile --contracts_build_directory=../../build/contracts/
-    cd ../../
+    cp -r ./node_modules/expopulo/contracts/ .
+    truffle compile
     #Initialize
     echo "Deploying Expopulo Contract"
     truffle exec scripts/setup.js
