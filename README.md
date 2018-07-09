@@ -36,3 +36,5 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 # TODO
 1. Add projects, tasks, and orgs to JSON with corresponding deployment
 2. Add non-metamask account content
+3. Add parameters for event pulls (org, task, project)
+4. Add outside creator view (project, task, submission)

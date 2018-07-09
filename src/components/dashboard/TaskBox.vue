@@ -1,13 +1,13 @@
 <template>
     <div id="taskbox">
         <div class="taskitem"
-             v-for="(item, index) in items"
+             v-for="(item, index) in tasks"
              :class="{active:index == selected}"
              @click="selected = index"
-             :key="item.id"
+             :key="item.index"
         >
-            <div class="titlebox">{{item.title}}</div>
-            <div class="detailbox">{{item.details}}</div>
+            <div class="titlebox">{{item.org}}</div>
+            <div class="detailbox">{{item.project}}</div>
         </div>
     </div>
 </template>
@@ -18,13 +18,32 @@ export default {
   data () {
     return {
       selected: undefined,
-      items: [
-        {title: 'Gopher', details: 'Testing details here'},
-        {title: 'Gophet', details: 'Testing other details here'},
-        {title: 'Gophem', details: 'Those details there'},
-        {title: 'Gophew', details: 'These details here'}
-      ]
+      tasks: null
     }
+  },
+  methods: {
+    getTasks () {
+      var eventArray = []
+      this.$store.state.contract.instance().TaskCreated({}, {
+        fromBlock: 0,
+        toBlock: 'latest'
+      }).get((error, events) => {
+        if (error) {
+          console.log('Error in project event handler: ' + error)
+        } else {
+          events.forEach(function (x) {
+            eventArray.push(x.args)
+          })
+          this.tasks = eventArray
+        }
+      })
+    }
+  },
+  beforeCreated () {
+    this.$store.dispatch('pollContract')
+  },
+  beforeMount () {
+    this.getTasks()
   }
 }
 </script>
