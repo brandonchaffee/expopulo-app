@@ -2,7 +2,8 @@ var Web3 = require('web3')
 var web3 = new Web3(web3.currentProvider)
 var fs = require('file-system')
 const Expopulo = artifacts.require('./Expopulo.sol')
-const byteJSON = require('../static/byteDetails.json')
+const metaJSON = require('../static/metaCreations.json')
+// const extJSON = require('../static/externalCreations.json')
 const accounts = web3.eth.accounts
 const MetaAddress = accounts[0]
 
@@ -17,18 +18,41 @@ async function initializeProject (byteObj) {
     MetaAddress, byteObj['parentIndex'], 1000)
 }
 
-async function initializeTask (byteObj) {
-  const projectID = byteJSON[byteObj['parent']]['parentIndex']
+async function initializeTask (JSONObj, byteObj) {
+  const projectID = JSONObj[byteObj['parent']]['parentIndex']
   await this.token.createTask(MetaAddress, projectID, byteObj['bytes32'])
   await this.token.contributeToTask(
     MetaAddress, projectID, byteObj['parentIndex'], 250)
 }
 
-async function initializeSubmission (byteObj) {
-  const task = byteJSON[byteObj['parent']]
-  const projectId = byteJSON[task['parent']]['parentIndex']
+async function initializeSubmission (JSONObj, byteObj) {
+  const task = JSONObj[byteObj['parent']]
+  const projectId = JSONObj[task['parent']]['parentIndex']
   await this.token.createSubmission(
     MetaAddress, projectId, task['parentIndex'], byteObj['bytes32'])
+}
+
+function initializeJSON (creationJSON) {
+  for (var key in creationJSON) {
+    var byteObj = creationJSON[key]
+
+    switch (byteObj['typeID']) {
+      case 0:
+        initializeOrg(byteObj)
+        break
+      case 1:
+        initializeProject(byteObj)
+        break
+      case 2:
+        initializeTask(creationJSON, byteObj)
+        break
+      case 3:
+        initializeSubmission(creationJSON, byteObj)
+        break
+      default:
+        throw 'Invalid type ID'
+    }
+  }
 }
 
 function createJSONFile(filename, payload) {
@@ -64,26 +88,11 @@ module.exports = async function (callback) {
   this.token = await Expopulo.new(50000, 1000)
   const supply = await this.token.totalSupply()
 
-  for (var key in byteJSON) {
-    var byteObj = byteJSON[key]
+  initializeJSON(metaJSON)
 
-    switch (byteObj['typeID']) {
-      case 0:
-        initializeOrg(byteObj)
-        break
-      case 1:
-        initializeProject(byteObj)
-        break
-      case 2:
-        initializeTask(byteObj)
-        break
-      case 3:
-        initializeSubmission(byteObj)
-        break
-      default:
-        throw 'Invalid type ID'
-    }
-  }
+  //Switch coinbase
+  // initializeJSON(extJSON)
+
 
   await generateContractJSON(
     this.token.address,
