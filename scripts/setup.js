@@ -58,21 +58,6 @@ function generateContractJSON (address, abi, externals) {
 
   createJSONFile('./src/util/generated/expopulo.json', contractJSON)
   createJSONFile('./src/util/generated/externals.json', externalJSON)
-
-  // const fileName = './src/util/generated/expopulo.json'
-  // fs.writeFile(fileName, JSON.stringify(contractJSON), function (err) {
-  //   if (err) {
-  //     console.log(err)
-  //     return
-  //   }
-  //
-  //   fs.exists(fileName, function (exists) {
-  //     if (exists) {
-  //       return true
-  //     }
-  //   })
-  // })
-
 }
 
 module.exports = async function (callback) {

@@ -1,7 +1,7 @@
 <template>
     <div id="accountinfo">
-      <div class="balance">Tokens: {{ tokenBalance }}</div>
-      <div class="balance">Ether: {{ ethBalance }}</div>
+      <div class="balance"><strong>Tokens:</strong> {{ tokenBalance }}</div>
+      <div class="balance"><strong>Ether:</strong> {{ ethBalance }}</div>
     </div>
 </template>
 
@@ -38,7 +38,7 @@ export default {
   padding-right: 45px;
   margin-left: auto;
   text-align: right;
-  font-weight: 600;
+  /* font-weight: 600; */
   font-size: 1.15em;
 }
 .balance {

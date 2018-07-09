@@ -34,6 +34,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 
 # TODO
-1. clean up web3 getter and polling
-2. Pull contract from npm package
-3. Organize function vs =>
+1. Pull contract from npm package
+2. Organize function vs =>
+3. Add projects, tasks, and orgs to JSON with corresponding deployment
+4. Add non-metamask account content
