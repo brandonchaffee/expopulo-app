@@ -3,7 +3,7 @@ var web3 = new Web3(web3.currentProvider)
 var fs = require('file-system')
 const Expopulo = artifacts.require('./Expopulo.sol')
 const metaJSON = require('../static/metaCreations.json')
-// const extJSON = require('../static/externalCreations.json')
+const secondJSON = require('../static/secondaryCreations.json')
 const accounts = web3.eth.accounts
 const MetaAddress = accounts[0]
 
@@ -91,7 +91,7 @@ module.exports = async function (callback) {
   initializeJSON(metaJSON)
 
   //Switch coinbase
-  // initializeJSON(extJSON)
+  // initializeJSON(secondJSON)
 
 
   await generateContractJSON(
