@@ -34,6 +34,5 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 
 # TODO
-1. Organize function vs =>
-2. Add projects, tasks, and orgs to JSON with corresponding deployment
-3. Add non-metamask account content
+1. Add projects, tasks, and orgs to JSON with corresponding deployment
+2. Add non-metamask account content

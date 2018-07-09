@@ -25,10 +25,10 @@ export default {
   data () {
     return {
       dynamicComponents: [
+        OrganizationBox,
         ProjectBox,
         TaskBox,
-        ContributionBox,
-        OrganizationBox
+        ContributionBox
       ],
       msg: 'This is the dash'
     }
