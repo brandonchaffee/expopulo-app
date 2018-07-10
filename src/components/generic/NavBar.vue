@@ -4,6 +4,7 @@
             <h1>{{title}}</h1>
         </router-link>
         <SearchBar></SearchBar>
+        <img @click="setCreation(true)" id="adder" src="../../assets/add.svg">
         <router-link :to="{ name: 'Dashboard'}">
             <img src="../../assets/user.svg">
         </router-link>
@@ -11,23 +12,30 @@
             <img src="../../assets/layers.svg">
         </router-link>
         <img src="../../assets/ethereum.svg">
+        <CreationModal v-if="$store.state.inCreation"></CreationModal>
     </div>
 </template>
 
 <script>
 import SearchBar from './SearchBar.vue'
+import CreationModal from './CreationModal.vue'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'NavBar',
   components: {
-    SearchBar
+    SearchBar,
+    CreationModal
   },
   data () {
     return {
       title: 'Expopulo',
       preText: 'Search'
     }
-  }
+  },
+  methods: mapActions([
+    'setCreation'
+  ])
 }
 </script>
 
@@ -57,19 +65,16 @@ a {
     text-decoration: none;
 }
 img {
-    opacity: 0.75;
+    opacity: 0.65;
     transition: opacity 300ms ease;
     float: right;
     height: 37px;
-    margin-right: 50px;
+    margin-right: 35px;
 }
 img:hover {
-    opacity: 0.95;
+    opacity: 1;
 }
-#balance {
-  padding: 5px 25px;
-  color: white;
-  font-weight: 600;
-  font-size: 1.15em;
+#adder {
+  cursor: pointer;
 }
 </style>

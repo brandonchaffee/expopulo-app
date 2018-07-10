@@ -23,20 +23,22 @@ export default {
   },
   methods: {
     getTasks () {
-      var eventArray = []
-      this.$store.state.contract.instance().TaskCreated({}, {
-        fromBlock: 0,
-        toBlock: 'latest'
-      }).get((error, events) => {
-        if (error) {
-          console.log('Error in project event handler: ' + error)
-        } else {
-          events.forEach(function (x) {
-            eventArray.push(x.args)
-          })
-          this.tasks = eventArray
-        }
-      })
+      if (this.$store.state.contract.instance !== null) {
+        var eventArray = []
+        this.$store.state.contract.instance().TaskCreated({}, {
+          fromBlock: 0,
+          toBlock: 'latest'
+        }).get((error, events) => {
+          if (error) {
+            console.log('Error in project event handler: ' + error)
+          } else {
+            events.forEach(function (x) {
+              eventArray.push(x.args)
+            })
+            this.tasks = eventArray
+          }
+        })
+      }
     }
   },
   beforeCreated () {

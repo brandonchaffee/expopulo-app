@@ -40,3 +40,4 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 4. Add outside creator view (project, task, submission)
 5. Add organization view (has all project, tasks, distribution, contribution
     of organzation)
+6. Integrate with Swarm

@@ -1,5 +1,25 @@
 {
     "0x09": {
-        "test":4
+        "bytes32": "0x0000000000000000000000000000000000000000000000000000000000000009",
+        "typeID": 0,
+        "typeName": "organization",
+        "parent": "",
+        "children": ["0x02","0x03","0x04"],
+        "information": {
+            "name":"Fossy",
+            "details": "Dedicated to free and open source software"
+        }
+    },
+    "0x0a": {
+        "bytes32": "0x000000000000000000000000000000000000000000000000000000000000000a",
+        "typeID": 1,
+        "typeName": "project",
+        "parent": "0x01",
+        "parentIndex": 0,
+        "children": ["0x05","0x06"],
+        "information": {
+            "title": "Create a fully decentalized web",
+            "details": "Aliquam dictum consectetur ex, quis accumsan tellus mattis nec.Maecenas massa quam, interdum a risus maximus, lobortis vestibulum enim. Fusce rhoncus tempor justo vel ornare. Ut a dolor nec lorem scelerisque porttitor."
+        }
     }
 }

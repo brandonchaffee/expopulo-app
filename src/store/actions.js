@@ -13,5 +13,6 @@ export default {
   pollWeb3: ({commit}, payload) => commit('pollWeb3Instance', payload),
   pollContract: ({commit}, payload) => commit('pollContractInstance', payload),
   getExternals: ({commit}, payload) => commit('registerExternals', payload),
-  setSidebar: ({ commit }, payload) => commit('setSidebar', payload)
+  setSidebar: ({ commit }, payload) => commit('setSidebar', payload),
+  setCreation: ({ commit }, payload) => commit('setCreation', payload)
 }

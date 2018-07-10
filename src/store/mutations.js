@@ -30,5 +30,8 @@ export default {
   },
   setSidebar (state, payload) {
     state.sidebar = payload
+  },
+  setCreation (state, payload) {
+    state.inCreation = payload
   }
 }

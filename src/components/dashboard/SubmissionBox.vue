@@ -1,6 +1,5 @@
 <template>
     <div id="submissionBox">
-        Submissions
         <!-- <button @click="getOrganization">Get Event</button> -->
         <!-- <div> {{ eventTest }} </div> -->
     </div>
