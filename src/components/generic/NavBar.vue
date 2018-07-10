@@ -7,6 +7,9 @@
         <router-link :to="{ name: 'Dashboard'}">
             <img src="../../assets/user.svg">
         </router-link>
+        <router-link to="/org/gopher">
+            <img src="../../assets/layers.svg">
+        </router-link>
         <img src="../../assets/ethereum.svg">
     </div>
 </template>

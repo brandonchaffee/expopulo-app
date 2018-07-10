@@ -12,25 +12,24 @@
 import TaskBox from './TaskBox.vue'
 import ProjectBox from './ProjectBox.vue'
 import ContributionBox from './ContributionBox.vue'
-import OrganizationBox from './OrganizationBox.vue'
+import SubmissionBox from './SubmissionBox.vue'
 
 export default {
   name: 'DashContent',
   components: {
-    TaskBox,
     ProjectBox,
-    ContributionBox,
-    OrganizationBox
+    TaskBox,
+    SubmissionBox,
+    ContributionBox
   },
   data () {
     return {
       dynamicComponents: [
-        OrganizationBox,
         ProjectBox,
         TaskBox,
+        SubmissionBox,
         ContributionBox
-      ],
-      msg: 'This is the dash'
+      ]
     }
   }
 }

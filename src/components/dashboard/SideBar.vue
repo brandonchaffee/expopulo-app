@@ -19,9 +19,9 @@ export default {
   data () {
     return {
       items: [
-        {name: 'Organizations'},
         {name: 'Projects'},
         {name: 'Tasks'},
+        {name: 'Submissions'},
         {name: 'Contributions'}
       ]
     }
